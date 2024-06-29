@@ -18,6 +18,7 @@ public enum ObfuscationTransformer {
     HWID_PROTECTION,
     PEEPHOLE_OPTIMIZER,
     CRASHER,
+    STRING_COLLECTOR,
     INVOKE_DYNAMIC,
     REFERENCE_PROXY,
     SHUFFLE_MEMBERS,

@@ -42,17 +42,7 @@ import java.util.zip.ZipOutputStream;
 
 import com.google.common.io.ByteStreams;
 import lombok.extern.slf4j.Slf4j;
-import me.superblaubeere27.jobf.processors.CrasherTransformer;
-import me.superblaubeere27.jobf.processors.HWIDProtection;
-import me.superblaubeere27.jobf.processors.HideMembers;
-import me.superblaubeere27.jobf.processors.InlineTransformer;
-import me.superblaubeere27.jobf.processors.InvokeDynamic;
-import me.superblaubeere27.jobf.processors.LineNumberRemover;
-import me.superblaubeere27.jobf.processors.NumberObfuscationTransformer;
-import me.superblaubeere27.jobf.processors.ReferenceProxy;
-import me.superblaubeere27.jobf.processors.ShuffleMembersTransformer;
-import me.superblaubeere27.jobf.processors.StaticInitializionTransformer;
-import me.superblaubeere27.jobf.processors.StringEncryptionTransformer;
+import me.superblaubeere27.jobf.processors.*;
 import me.superblaubeere27.jobf.processors.flowObfuscation.FlowObfuscator;
 import me.superblaubeere27.jobf.processors.name.ClassWrapper;
 import me.superblaubeere27.jobf.processors.name.INameObfuscationProcessor;
@@ -301,6 +291,7 @@ public class JObfImpl {
         processors.add(new InvokeDynamic());
 
         processors.add(new StringEncryptionTransformer(this));
+        processors.add(new StringPoolTransformer());
         processors.add(new NumberObfuscationTransformer(this));
         processors.add(new FlowObfuscator(this));
         processors.add(new HideMembers(this));

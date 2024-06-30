@@ -93,7 +93,7 @@ public class StringPoolTransformer implements IClassTransformer {
 
     @Override
     public ObfuscationTransformer getType() {
-        return ObfuscationTransformer.STRING_ENCRYPTION; // Ajuste conforme necessário
+        return ObfuscationTransformer.STRING_ENCRYPTION;
     }
 }
 
